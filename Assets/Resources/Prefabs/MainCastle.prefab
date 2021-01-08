@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2763476974568092328}
   m_Layer: 0
   m_Name: MainCastle
-  m_TagString: main_target
+  m_TagString: Castle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7247abee8fbcaae44bfab62128f082e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stats: {fileID: 0}
+  animator: {fileID: 0}
   _level: 1
   _rangeOfView: 2
 --- !u!61 &2763476974568092328

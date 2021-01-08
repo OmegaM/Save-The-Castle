@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 
 public class Controller : MonoBehaviour, ICharacter
@@ -46,9 +47,30 @@ public class Controller : MonoBehaviour, ICharacter
             return;
         }
     }
-
-    public virtual void MakeDamage(Ability ability, GameObject target)
+    /// <summary>
+    /// Using Tag, find target controller
+    /// And make damage to it
+    /// </summary>
+    /// <param name="ability">Ability to use</param>
+    /// <param name="target">Target of damage</param>
+    public async virtual void MakeDamage(Ability ability, GameObject target)
     {
-        
+        animator.SetBool("CanAttack", true);
+        switch (target.gameObject.tag)
+        {
+            case "Player":
+                target.GetComponent<PlayerController>().GetDamage(ability);
+                break;
+            case "Enemy":
+                target.GetComponent<EnemyController>().GetDamage(ability);
+                break;
+            case "Castle":
+                target.GetComponent<CastleController>().GetDamage(ability);
+                break;
+            default:
+                return;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+            animator.SetBool("CanAttack", false);
     }
 }

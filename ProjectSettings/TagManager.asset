@@ -7,7 +7,7 @@ TagManager:
   - ground
   - Enemy
   - enemy_respawn
-  - main_target
+  - Castle
   layers:
   - Default
   - TransparentFX

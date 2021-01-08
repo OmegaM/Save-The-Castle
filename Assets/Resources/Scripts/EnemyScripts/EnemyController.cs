@@ -32,20 +32,8 @@ public class EnemyController : Controller
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "main_target")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Castle")
             MakeDamage(_stats.Ability,collision.gameObject);
-        animator.SetBool("CanAtack", false);
-    }
-
-    
-
-    public override void MakeDamage(Ability ability, GameObject target)
-    {
-        animator.SetBool("CanAtack",true);
-        if (target.gameObject.tag == "Player")
-            target.GetComponent<PlayerController>().GetDamage(ability);
-        else if (target.gameObject.tag == "main_target")
-            target.GetComponent<CastleController>().GetDamage(ability);
-
+        
     }
 }
