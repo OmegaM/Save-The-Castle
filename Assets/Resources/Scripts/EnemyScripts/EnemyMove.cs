@@ -20,8 +20,8 @@ public class EnemyMove : MonoBehaviour
     }
     private void Start()
     {
-        if (this.transform.position.x < 0)
-            this.transform.rotation = new Quaternion(0, 180, 0, 0);
+        if (this.transform.position.x > 0)
+            this.transform.rotation = new Quaternion(0, 90, 0, 0);
     }
     void Update()
     {
@@ -32,12 +32,12 @@ public class EnemyMove : MonoBehaviour
             if (isInRangeOfView)
             {
                 this.transform.position = Vector2.MoveTowards(this.transform.position, enemy.transform.position, speed * Time.deltaTime);
-                this.transform.rotation = enemy.transform.position.x > this.transform.position.x ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
+                this.transform.rotation = enemy.transform.position.x < this.transform.position.x ? new Quaternion(0, 90, 0, 0) : new Quaternion(0, 0, 0, 0);
             }
             else
             {
                 this.transform.position = Vector2.MoveTowards(this.transform.position, _mainTarget.transform.position, speed * Time.deltaTime);
-                this.transform.rotation = this.transform.position.x > 0 ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
+                this.transform.rotation = this.transform.position.x > 0 ? new Quaternion(0, 90, 0, 0) : new Quaternion(0, 0, 0, 0);
             }
         }
     }
