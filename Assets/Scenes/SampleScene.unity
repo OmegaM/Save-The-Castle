@@ -650,6 +650,21 @@ PrefabInstance:
       propertyPath: playerMeleeDefense
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7291046428125603573, guid: ed5c87138c146b7489dac27d237f1536,
+        type: 3}
+      propertyPath: playerAutoAttackDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291046428125603573, guid: ed5c87138c146b7489dac27d237f1536,
+        type: 3}
+      propertyPath: playerAutoAttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291046428125603573, guid: ed5c87138c146b7489dac27d237f1536,
+        type: 3}
+      propertyPath: playerAutoAttackCoolDown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7996429111810515469, guid: ed5c87138c146b7489dac27d237f1536,
         type: 3}
       propertyPath: m_Sprite

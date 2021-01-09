@@ -75,7 +75,7 @@
     <Compile Include="Assets\Resources\Scripts\MainCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\Models\Ability.cs" />
     <Compile Include="Assets\Resources\Scripts\Models\Controller.cs" />
-    <Compile Include="Assets\Resources\Scripts\Models\MageAtack.cs" />
+    <Compile Include="Assets\Resources\Scripts\Models\MageAttack.cs" />
     <Compile Include="Assets\Resources\Scripts\Models\MageDefense.cs" />
     <Compile Include="Assets\Resources\Scripts\Models\Stats.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayersScripts\PlayerController.cs" />

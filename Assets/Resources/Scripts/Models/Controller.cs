@@ -14,16 +14,16 @@ public class Controller : MonoBehaviour, ICharacter
     public virtual void Death()
     {
         animator.SetBool("Death", true);
-        GameObject.Destroy(this.gameObject, 5);
+        GameObject.Destroy(this.gameObject, 2);
     }
 
     public virtual void GetDamage(Ability abillity)
     {
         var damage = 0.0f;
-        if (abillity.AtackType == Enums.AtackTypes.Mage)
+        if (abillity.AttackType == Enums.AttackTypes.Mage)
         {
             var defenseAttributes = _stats.MageDefense.GetType().GetProperties().Where(p => (float)p.GetValue(_stats.MageDefense, null) > 0);
-            var atackAttributes = abillity.MageAtack.GetType().GetProperties().Where(p => (float)p.GetValue(abillity.MageAtack, null) > 0);
+            var atackAttributes = abillity.MageAttack.GetType().GetProperties().Where(p => (float)p.GetValue(abillity.MageAttack, null) > 0);
             foreach (var attribute in atackAttributes)
             {
                 if (atackAttributes.Contains(attribute))
@@ -67,10 +67,7 @@ public class Controller : MonoBehaviour, ICharacter
             case "Castle":
                 target.GetComponent<CastleController>().GetDamage(ability);
                 break;
-            default:
-                return;
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
-            animator.SetBool("CanAttack", false);
+       
     }
 }

@@ -16,11 +16,11 @@ public class CastleController : Controller
     {
         _stats = this.GetComponent<Stats>();
         _stats.Health = _level * 100;
-        _stats.Ability = new Ability { AtackType = Enums.AtackTypes.Range, 
+        _stats.Ability = new Ability { AttackType = Enums.AttackTypes.Range, 
                                          Range = 2,
                                          CoolDown = 1,
                                          CDTimer = 0.0f,
-                                         MageAtack = new MageAtackAttributes() 
+                                         MageAttack = new MageAttackAttributes() 
                                          { 
                                              Darkness = 0,
                                              Earth = 0,

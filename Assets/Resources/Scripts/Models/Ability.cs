@@ -7,8 +7,8 @@ public class Ability
     public float CoolDown { get; set; }
     public float CDTimer { get; set; }
     public float Damage { get; set; }
-    public Enums.AtackTypes AtackType { get; set; }
-    public MageAtackAttributes MageAtack { get; set; }
+    public Enums.AttackTypes AttackType { get; set; }
+    public MageAttackAttributes MageAttack { get; set; }
 
     public GameObject prefab;
 }

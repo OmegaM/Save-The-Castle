@@ -1,6 +1,6 @@
 ﻿public class Enums
 {
-    public enum AtackTypes
+    public enum AttackTypes
     {
         Melee,
         Range,
