@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 public class Controller : MonoBehaviour, ICharacter
@@ -9,6 +10,7 @@ public class Controller : MonoBehaviour, ICharacter
     public List<Ability> Abilities { get ; set ; }
     public Stats _stats;
     public Animator animator;
+    public Slider healthBar;
     
 
     public virtual void Death()
@@ -39,6 +41,8 @@ public class Controller : MonoBehaviour, ICharacter
             damage += abillity.Damage - (_stats.MeleeDefense / 10);
         }
         _stats.Health -= damage;
+        healthBar.value = _stats.Health;
+
         Debug.Log($"Make {damage} damage | Current Heath Level is {_stats.Health}");
 
         if (_stats.Health <= 0)
@@ -53,7 +57,7 @@ public class Controller : MonoBehaviour, ICharacter
     /// </summary>
     /// <param name="ability">Ability to use</param>
     /// <param name="target">Target of damage</param>
-    public async virtual void MakeDamage(Ability ability, GameObject target)
+    public virtual void MakeDamage(Ability ability, GameObject target)
     {
         animator.SetBool("CanAttack", true);
         switch (target.gameObject.tag)

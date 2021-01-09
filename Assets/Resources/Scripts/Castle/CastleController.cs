@@ -7,15 +7,20 @@ public class CastleController : Controller
     public float _rangeOfView = 2;
     private GameObject _target = null;
     private GameObject[] _enemyArray;
+    public GameObject healthBarObject;
 
     void Awake()
     {
         _stats = GetComponent<Stats>();
+        healthBar = healthBarObject.GetComponentInChildren<UnityEngine.UI.Slider>();
+        _stats.MaxHealth = _level * 100;
+        _stats.Health = _stats.MaxHealth;
+        healthBar.maxValue = _stats.MaxHealth;
+        healthBar.value = _stats.Health;
     }
     void Start()
     {
         _stats = this.GetComponent<Stats>();
-        _stats.Health = _level * 100;
         _stats.Ability = new Ability { AttackType = Enums.AttackTypes.Range, 
                                          Range = 2,
                                          CoolDown = 1,

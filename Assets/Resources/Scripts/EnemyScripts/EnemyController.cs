@@ -12,11 +12,16 @@ public class EnemyController : Controller
     public Enums.AttackTypes abilityAttackType;
     public MageAttackAttributes abilityAttributes;
     public GameObject abilityPrefab;
+    public GameObject healthBarObject;
 
     private void Awake()
     {
+        healthBar = healthBarObject.GetComponentInChildren<UnityEngine.UI.Slider>();
         _stats = GetComponent<Stats>();
-        _stats.Health = level * 100;
+        _stats.MaxHealth = level * 100;
+        _stats.Health = _stats.MaxHealth;
+        healthBar.maxValue = _stats.MaxHealth;
+        healthBar.value = _stats.Health;
         _stats.Ability = new Ability 
         {
             AttackType = abilityAttackType,

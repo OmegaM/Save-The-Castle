@@ -159,6 +159,36 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1730943616662559370, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730943616662559370, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730943616956486649, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730943616956486649, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.482
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730943616956486649, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730943616956486649, guid: 1ef60c227a46f1146ae1befdc97f218d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 2762334527647381693, guid: 1ef60c227a46f1146ae1befdc97f218d,
         type: 3}
       propertyPath: m_Controller

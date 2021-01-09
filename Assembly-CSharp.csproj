@@ -70,6 +70,7 @@
     <Compile Include="Assets\Resources\Scripts\EnemyScripts\EnemyMove.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyScripts\EnemyRespawn.cs" />
     <Compile Include="Assets\Resources\Scripts\Enums.cs" />
+    <Compile Include="Assets\Resources\Scripts\HealthBarScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Intefaces\ICharacter.cs" />
     <Compile Include="Assets\Resources\Scripts\Intefaces\IStats.cs" />
     <Compile Include="Assets\Resources\Scripts\MainCamera.cs" />

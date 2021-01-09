@@ -6,12 +6,15 @@
     public float playerAutoAttackRange;
     public float playerAutoAttackCoolDown;
     public UnityEngine.GameObject playerAutoAttackPrefab;
-
+    public UnityEngine.GameObject healthBarObject;
     private void Awake()
     {
+        healthBar = healthBarObject.GetComponentInChildren<UnityEngine.UI.Slider>();
         _stats = GetComponent<Stats>();
-        animator.SetBool("Death", false);
-        _stats.Health = playerHealth;
+        _stats.MaxHealth = playerHealth;
+        _stats.Health = _stats.MaxHealth;
+        healthBar.maxValue = _stats.MaxHealth;
+        healthBar.value = _stats.Health;
         _stats.MeleeDefense = playerMeleeDefense;
         _stats.Ability = new Ability
         {
@@ -21,6 +24,7 @@
            Damage  = playerAutoAttackDamage,
            Range = playerAutoAttackRange
         };
+        animator.SetBool("Death", false);
     }
     private void Update()
     {
