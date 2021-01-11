@@ -22,17 +22,19 @@ public class EnemyController : Controller
         _stats.Health = _stats.MaxHealth;
         healthBar.maxValue = _stats.MaxHealth;
         healthBar.value = _stats.Health;
-        _stats.Ability = new Ability 
+        animator.SetBool("Death", false);
+    }
+    private void Start()
+    {
+        _stats.Ability = new Ability
         {
             AttackType = abilityAttackType,
-            CDTimer = 0.0f,
-            CoolDown = abilityCoolDown,
             Damage = abilityDamage,
+            CoolDown = abilityCoolDown,
             MageAttack = abilityAttributes,
             Range = abilityRange,
             prefab = abilityPrefab
         };
-        animator.SetBool("Death", false);
     }
 
     private void Update()
@@ -43,7 +45,7 @@ public class EnemyController : Controller
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Castle")
+        if ((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Castle") && _stats.Ability.CanBeUsed)
             MakeDamage(_stats.Ability,collision.gameObject);
         
     }

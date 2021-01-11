@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour, ICharacter
 {
-    public List<Ability> Abilities { get ; set ; }
+    public List<Ability> Abilities { get; set; } = new List<Ability>();
     public Stats _stats;
     public Animator animator;
     public Slider healthBar;
@@ -21,14 +21,15 @@ public class Controller : MonoBehaviour, ICharacter
 
     public virtual void GetDamage(Ability abillity)
     {
+        _stats = GetComponent<Stats>();
         var damage = 0.0f;
         if (abillity.AttackType == Enums.AttackTypes.Mage)
         {
             var defenseAttributes = _stats.MageDefense.GetType().GetProperties().Where(p => (float)p.GetValue(_stats.MageDefense, null) > 0);
-            var atackAttributes = abillity.MageAttack.GetType().GetProperties().Where(p => (float)p.GetValue(abillity.MageAttack, null) > 0);
+            var atackAttributes = abillity.MageAttack.GetType().GetProperties().Where(p => (float)p.GetValue(abillity.MageAttack, null) > 0).ToList();
             foreach (var attribute in atackAttributes)
             {
-                if (atackAttributes.Contains(attribute))
+                if (defenseAttributes.Contains(attribute))
                 {
                     damage += abillity.Damage - ((float)defenseAttributes.SingleOrDefault(p => p.Name == attribute.Name).GetValue(_stats.MageDefense, null) / 10);
                 }

@@ -5,7 +5,8 @@ public class AmmoScript : MonoBehaviour
     private Stats _stats;
     private void Start()
     {
-        GameObject.Destroy(this, 10);
+        GameObject.Destroy(this.gameObject, 3);
+        _stats = GetComponent<Stats>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

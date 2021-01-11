@@ -1,4 +1,6 @@
-﻿public class PlayerController : Controller
+﻿using UnityEngine;
+
+public class PlayerController : Controller
 {
     public float playerHealth;
     public int playerMeleeDefense;
@@ -16,15 +18,27 @@
         healthBar.maxValue = _stats.MaxHealth;
         healthBar.value = _stats.Health;
         _stats.MeleeDefense = playerMeleeDefense;
+        
+        animator.SetBool("Death", false);
+    }
+    private void Start()
+    {
         _stats.Ability = new Ability
         {
-           AttackType = Enums.AttackTypes.Melee,
-           CDTimer = 0.0f,
-           CoolDown = playerAutoAttackCoolDown,
-           Damage  = playerAutoAttackDamage,
-           Range = playerAutoAttackRange
+            AttackType = Enums.AttackTypes.Melee,
+            Damage = playerAutoAttackDamage,
+            CoolDown = playerAutoAttackCoolDown,
+            Range = playerAutoAttackRange
         };
-        animator.SetBool("Death", false);
+        Abilities.Add(new Ability
+        {
+            AttackType = Enums.AttackTypes.Mage,
+            Damage = 50,
+            CoolDown = 10.0f,
+            MageAttack = new MageAttackAttributes { Darkness = 10, Earth = 0, Fire = 0, Light = 0, Water = 0 },
+            Range = 2,
+            prefab = (GameObject)Resources.Load("Prefabs/dark_attack")
+        }) ;
     }
     private void Update()
     {
@@ -32,7 +46,7 @@
             animator.SetBool("CanAttack", false);
     }
 
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
             MakeDamage(_stats.Ability, collision.gameObject);

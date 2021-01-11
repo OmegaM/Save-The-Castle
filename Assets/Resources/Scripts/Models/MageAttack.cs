@@ -1,9 +1,9 @@
-﻿    public class MageAttackAttributes 
-    {
-        public int Fire { get; set; }
-        public int Water { get; set; }
-        public int Earth { get; set; }
-        public int Light { get; set; }
-        public int Darkness { get; set; }
-    }
+﻿public class MageAttackAttributes 
+{
+    public float Fire { get; set; } = 0;
+    public float Water { get; set; } = 0;
+    public float Earth { get; set; } = 0;
+    public float Light { get; set; } = 0;
+    public float Darkness { get; set; } = 0;
+}
 
