@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - enemy_respawn
   - Castle
+  - btn_image
   layers:
   - Default
   - TransparentFX

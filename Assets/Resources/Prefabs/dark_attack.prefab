@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &40004656570824841
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680930533755500325}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d61d672a52e71ed40bd4f3c1617d780d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2276048052354467304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 6872532751602971336, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_Mass
-      value: 0.0001
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971336, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
@@ -30,12 +49,12 @@ PrefabInstance:
     - target: {fileID: 6872532751602971342, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 8.26
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971342, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 7.96
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971342, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
@@ -55,12 +74,12 @@ PrefabInstance:
     - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.06389
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.04762
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
@@ -110,18 +129,29 @@ PrefabInstance:
     - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.14
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.09
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872532751602971343, guid: baa104522ee97ba47bebf8de49e300e9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7559600637099108218, guid: baa104522ee97ba47bebf8de49e300e9,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1012fe773c100b9439652058d117501b,
+      objectReference: {fileID: -4729654383814469916, guid: 95d21ca2afcfe2d43a74057f8efa91c8,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa104522ee97ba47bebf8de49e300e9, type: 3}
+--- !u!1 &4680930533755500325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6872532751602971341, guid: baa104522ee97ba47bebf8de49e300e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2276048052354467304}
+  m_PrefabAsset: {fileID: 0}

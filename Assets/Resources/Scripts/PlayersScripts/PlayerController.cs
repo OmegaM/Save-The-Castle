@@ -43,6 +43,17 @@ public class PlayerController : Controller
             Range = 2,
             prefab = (GameObject)Resources.Load("Prefabs/dark_attack")
         }) ;
+        Abilities.Add(new Ability
+        {
+            abillityName = "LightBolt",
+            AttackType = Enums.AttackTypes.Mage,
+            Damage = 50,
+            CoolDown = 1.0f,
+            CDTimer = 1.0f,
+            MageAttack = new MageAttackAttributes { Darkness = 0, Earth = 0, Fire = 0, Light = 10, Water = 0},
+            Range = 2,
+            prefab = (GameObject)Resources.Load("Prefabs/light_attack")
+        });
     }
     private void Update()
     {
@@ -53,7 +64,10 @@ public class PlayerController : Controller
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
+        {
+            this.transform.rotation = collision.transform.position.x <= this.transform.position.x ? new Quaternion(0, 180, 0, 0) : new Quaternion(0, 0, 0, 0);
             MakeDamage(_stats.Ability, collision.gameObject);
+        }
     }
 
 

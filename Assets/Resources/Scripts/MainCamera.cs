@@ -57,14 +57,19 @@ public class MainCamera : MonoBehaviour
             var skill = playerSkills[i];
             var btn = Instantiate(skillButton, new Vector2((skillList.transform.position.x + (((RectTransform)skillButton.transform).rect.width) * i), skillList.transform.position.y), Quaternion.identity);
             btn.transform.SetParent(skillList.transform);
-            btn.image.sprite = skill.prefab.GetComponent<SpriteRenderer>().sprite;
-            btn.onClick.AddListener(() => UseSkill(skill));
+            btn.transform.Find("ImgPlace").GetComponentInChildren<Image>().sprite = skill.prefab.GetComponent<SpriteRenderer>().sprite;
+            btn.transform.Find("CoolDown").GetComponent<Image>().fillAmount = 0;
+            btn.onClick.AddListener(() => UseSkill(skill, btn));
         }
         _drownedPlayer = currentPlayer;
     }
-
-    public void UseSkill(Ability skill)
-      {
+    /// <summary>
+    /// Let player use active skills
+    /// </summary>
+    /// <param name="skill">Skill</param>
+    /// <param name="btn">link to btn from panel</param>
+    public void UseSkill(Ability skill, Button btn)
+    {
         var currentPalyerSkill = currentPlayer.GetComponent<PlayerController>().Abilities.SingleOrDefault(s => s.abillityName == skill.abillityName);
         if (!currentPalyerSkill.CanBeUsed)
             return;
@@ -73,6 +78,7 @@ public class MainCamera : MonoBehaviour
         tmp.GetComponent<Stats>().Ability = skill;
         tmp.GetComponent<Rigidbody2D>().velocity = (currentPlayer.transform.rotation.y == 0 ? Vector2.right : Vector2.left) * 50.0f * Time.deltaTime;
         currentPalyerSkill.ResetCoolDownTimer();
+        btn.GetComponent<SkillButtonScript>().cdTime = skill.CoolDown;
     }
     /// <summary>
     /// Method that clean skill panel if need

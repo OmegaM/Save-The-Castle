@@ -1,7 +1,202 @@
 fileFormatVersion: 2
 guid: 2def01e571437a749be0e87edb2143c8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -609380530195901079
+    second: main_castle_0
+  - first:
+      213: -5117850841241872239
+    second: main_castle_1
+  - first:
+      213: -818556209073652070
+    second: main_castle_2
+  - first:
+      213: 1699145522006735802
+    second: main_castle_3
+  - first:
+      213: -1666631594652280473
+    second: main_castle_4
+  - first:
+      213: -4601000977681037419
+    second: main_castle_5
+  - first:
+      213: 413417254264749728
+    second: main_castle_6
+  - first:
+      213: -7156067326039074553
+    second: main_castle_7
+  - first:
+      213: -9194611682121510084
+    second: main_castle_8
+  - first:
+      213: -2585018492865351535
+    second: main_castle_9
+  - first:
+      213: 6107981882673021164
+    second: main_castle_10
+  - first:
+      213: -3082848676659919967
+    second: main_castle_11
+  - first:
+      213: 184787014298800637
+    second: main_castle_12
+  - first:
+      213: -7178085307637813957
+    second: main_castle_13
+  - first:
+      213: -261166768273461764
+    second: main_castle_14
+  - first:
+      213: -951736597191490456
+    second: main_castle_15
+  - first:
+      213: 456621470736769361
+    second: main_castle_16
+  - first:
+      213: -8258609782157388408
+    second: main_castle_17
+  - first:
+      213: 2286522977159730442
+    second: main_castle_18
+  - first:
+      213: 1019926591739965858
+    second: main_castle_19
+  - first:
+      213: -7887078071202453303
+    second: main_castle_20
+  - first:
+      213: 3797133662438396969
+    second: main_castle_21
+  - first:
+      213: 9064456141958290833
+    second: main_castle_22
+  - first:
+      213: 9081886330307550513
+    second: main_castle_23
+  - first:
+      213: 310058979508703024
+    second: main_castle_24
+  - first:
+      213: 7385234734135470945
+    second: main_castle_25
+  - first:
+      213: 1686974560931413384
+    second: main_castle_26
+  - first:
+      213: -4076878385543243134
+    second: main_castle_27
+  - first:
+      213: 5836827581438480331
+    second: main_castle_28
+  - first:
+      213: 9037288399255062465
+    second: main_castle_29
+  - first:
+      213: 4061259454356433144
+    second: main_castle_30
+  - first:
+      213: -3579574387776216861
+    second: main_castle_31
+  - first:
+      213: 2942707154938327156
+    second: main_castle_32
+  - first:
+      213: -1645658142236666422
+    second: main_castle_33
+  - first:
+      213: -9042937654306676975
+    second: main_castle_34
+  - first:
+      213: -2369603330609503873
+    second: main_castle_35
+  - first:
+      213: -1314188525183709998
+    second: main_castle_36
+  - first:
+      213: -3141461816062218128
+    second: main_castle_37
+  - first:
+      213: -5641074745689832379
+    second: main_castle_38
+  - first:
+      213: 7943997476975329465
+    second: main_castle_39
+  - first:
+      213: -3712725358214489321
+    second: main_castle_40
+  - first:
+      213: -6760353610698812909
+    second: main_castle_41
+  - first:
+      213: -2135783655432528329
+    second: main_castle_42
+  - first:
+      213: 417800211559872909
+    second: main_castle_43
+  - first:
+      213: 78641317059959987
+    second: main_castle_44
+  - first:
+      213: -8311106186116307364
+    second: main_castle_45
+  - first:
+      213: 3310787079811470417
+    second: main_castle_46
+  - first:
+      213: 3691936592433730738
+    second: main_castle_47
+  - first:
+      213: -973778286829691752
+    second: main_castle_48
+  - first:
+      213: 2339685739573806320
+    second: main_castle_49
+  - first:
+      213: -4728631676930864784
+    second: main_castle_50
+  - first:
+      213: 7966530208340114186
+    second: main_castle_51
+  - first:
+      213: -8287849949529273960
+    second: main_castle_52
+  - first:
+      213: -7922341061324580586
+    second: main_castle_53
+  - first:
+      213: 8713931366448526347
+    second: main_castle_54
+  - first:
+      213: 7438181735941103477
+    second: main_castle_55
+  - first:
+      213: 387323896351134795
+    second: main_castle_56
+  - first:
+      213: 1871358211176849776
+    second: main_castle_57
+  - first:
+      213: 1597465804462694466
+    second: main_castle_58
+  - first:
+      213: 7362231546277513477
+    second: main_castle_59
+  - first:
+      213: 285065467620255169
+    second: main_castle_60
+  - first:
+      213: -8516385250518263514
+    second: main_castle_61
+  - first:
+      213: -6309956992177767543
+    second: main_castle_62
+  - first:
+      213: -5928605868570243978
+    second: main_castle_63
+  - first:
+      213: 5392638827623681761
+    second: main_castle_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +226,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,13 +235,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 37, z: 0, w: 39}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -71,9 +266,54 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: main_castle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee0d7a317086da40800000000000000
+      internalID: 5392638827623681761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
