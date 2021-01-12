@@ -44,7 +44,7 @@ public class Controller : MonoBehaviour, ICharacter
         _stats.Health -= damage;
         healthBar.value = _stats.Health;
 
-        Debug.Log($"Make {damage} damage | Current Heath Level is {_stats.Health}");
+        Debug.Log($"Make {damage} damage to {_stats.gameObject.tag}| Current Heath Level is {_stats.Health}");
 
         if (_stats.Health <= 0)
         {
@@ -53,26 +53,13 @@ public class Controller : MonoBehaviour, ICharacter
         }
     }
     /// <summary>
-    /// Using Tag, find target controller
-    /// And make damage to it
+    /// Make damage to enemy
     /// </summary>
     /// <param name="ability">Ability to use</param>
     /// <param name="target">Target of damage</param>
     public virtual void MakeDamage(Ability ability, GameObject target)
     {
         animator.SetBool("CanAttack", true);
-        switch (target.gameObject.tag)
-        {
-            case "Player":
-                target.GetComponent<PlayerController>().GetDamage(ability);
-                break;
-            case "Enemy":
-                target.GetComponent<EnemyController>().GetDamage(ability);
-                break;
-            case "Castle":
-                target.GetComponent<CastleController>().GetDamage(ability);
-                break;
-        }
-       
+        target.GetComponent<Controller>().GetDamage(ability);
     }
 }

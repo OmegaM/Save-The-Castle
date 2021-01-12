@@ -28,9 +28,11 @@ public class EnemyController : Controller
     {
         _stats.Ability = new Ability
         {
+            abillityName = "AutoAttack",
             AttackType = abilityAttackType,
             Damage = abilityDamage,
             CoolDown = abilityCoolDown,
+            CDTimer = abilityCoolDown,
             MageAttack = abilityAttributes,
             Range = abilityRange,
             prefab = abilityPrefab

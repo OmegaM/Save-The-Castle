@@ -25,16 +25,20 @@ public class PlayerController : Controller
     {
         _stats.Ability = new Ability
         {
+            abillityName = "AutoAttack",
             AttackType = Enums.AttackTypes.Melee,
             Damage = playerAutoAttackDamage,
             CoolDown = playerAutoAttackCoolDown,
+            CDTimer = playerAutoAttackCoolDown,
             Range = playerAutoAttackRange
         };
         Abilities.Add(new Ability
         {
+            abillityName = "DarkSplash",
             AttackType = Enums.AttackTypes.Mage,
             Damage = 50,
-            CoolDown = 10.0f,
+            CoolDown = 1.0f,
+            CDTimer = 1.0f,
             MageAttack = new MageAttackAttributes { Darkness = 10, Earth = 0, Fire = 0, Light = 0, Water = 0 },
             Range = 2,
             prefab = (GameObject)Resources.Load("Prefabs/dark_attack")

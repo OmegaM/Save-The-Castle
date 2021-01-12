@@ -21,10 +21,11 @@ public class CastleController : Controller
     void Start()
     {
         _stats = this.GetComponent<Stats>();
-        _stats.Ability = new Ability{ 
+        _stats.Ability = new Ability{
+            abillityName = "AutoAtack",
             AttackType = Enums.AttackTypes.Range, 
             Range = 2,
-            CoolDown = 1,
+            CoolDown = 1.0f,
             MageAttack = new MageAttackAttributes() 
             { 
                 Darkness = 0,
@@ -36,6 +37,7 @@ public class CastleController : Controller
             Damage = 10,
             prefab = (GameObject)Resources.Load("Prefabs/RangeShot")
         };
+        _stats.Ability.ResetCoolDownTimer();
     }
     void Update()
     {
@@ -57,6 +59,7 @@ public class CastleController : Controller
             var arrow = Instantiate<GameObject>(_stats.Ability.prefab, new Vector2(emb.transform.position.x, emb.transform.position.y) ,new Quaternion(0,0,_target.transform.position.x < 0 ? 180 : 0,0));
             arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(_target.transform.position.x, emb.transform.position.y + 2) * 50.0f * Time.deltaTime;
             arrow.GetComponent<Stats>().Ability = _stats.Ability;
+            _stats.Ability.ResetCoolDownTimer();
         }
     }
 }

@@ -50,8 +50,9 @@ public class MainCamera : MonoBehaviour
         var childs = skillList.transform.GetChildCount();
         if (childs > 0)
             CleanSkillChilds();
-        var playerSkills = currentPlayer.GetComponent<PlayerController>().Abilities;
-        for (var i = 0; i < playerSkills.Count; i++)
+        var playerSkills = currentPlayer.GetComponent<PlayerController>().Abilities.Where(s => s.IsActive).ToArray();
+        
+        for (var i = 0; i < playerSkills.Count(); i++)
         {
             var skill = playerSkills[i];
             var btn = Instantiate(skillButton, new Vector2((skillList.transform.position.x + (((RectTransform)skillButton.transform).rect.width) * i), skillList.transform.position.y), Quaternion.identity);
@@ -61,14 +62,17 @@ public class MainCamera : MonoBehaviour
         }
         _drownedPlayer = currentPlayer;
     }
+
     public void UseSkill(Ability skill)
-    {
-        if (!skill.CanBeUsed)
+      {
+        var currentPalyerSkill = currentPlayer.GetComponent<PlayerController>().Abilities.SingleOrDefault(s => s.abillityName == skill.abillityName);
+        if (!currentPalyerSkill.CanBeUsed)
             return;
         var attackPlace = currentPlayer.transform.Find("AttackArea");
         var tmp = Instantiate(skill.prefab, new Vector2(attackPlace.transform.position.x, attackPlace.transform.position.y), Quaternion.identity);
         tmp.GetComponent<Stats>().Ability = skill;
-        tmp.GetComponent<Rigidbody2D>().velocity = new Vector2(this.transform.position.x, this.transform.position.y) * 50.0f * Time.deltaTime;
+        tmp.GetComponent<Rigidbody2D>().velocity = (currentPlayer.transform.rotation.y == 0 ? Vector2.right : Vector2.left) * 50.0f * Time.deltaTime;
+        currentPalyerSkill.ResetCoolDownTimer();
     }
     /// <summary>
     /// Method that clean skill panel if need
