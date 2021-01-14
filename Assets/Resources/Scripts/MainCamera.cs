@@ -10,12 +10,14 @@ public class MainCamera : MonoBehaviour
     public Button playerButton;
     public Button skillButton;
     private GameObject _drownedPlayer;
+    public GameObject mouseCursore;
     void Update()
     {
         this.transform.position = new Vector3(currentPlayer.transform.position.x, -1.9f, -10);
     }
     public void Start()
     {
+        Instantiate(mouseCursore, Vector2.zero, Quaternion.identity);
         _playerCharacters = GameObject.FindGameObjectsWithTag("Player");
         currentPlayer = _playerCharacters.FirstOrDefault();
         var playersList = GameObject.Find("PlayersList");

@@ -26,6 +26,7 @@ public class CastleController : Controller
             AttackType = Enums.AttackTypes.Range, 
             Range = 2,
             CoolDown = 1.0f,
+            CDTimer = 1.0f,
             MageAttack = new MageAttackAttributes() 
             { 
                 Darkness = 0,
