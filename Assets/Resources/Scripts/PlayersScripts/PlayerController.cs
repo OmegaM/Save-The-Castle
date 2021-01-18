@@ -7,8 +7,8 @@ public class PlayerController : Controller
     public float playerAutoAttackDamage;
     public float playerAutoAttackRange;
     public float playerAutoAttackCoolDown;
-    public UnityEngine.GameObject playerAutoAttackPrefab;
-    public UnityEngine.GameObject healthBarObject;
+    public GameObject playerAutoAttackPrefab;
+    public GameObject healthBarObject;
     private void Awake()
     {
         healthBar = healthBarObject.GetComponentInChildren<UnityEngine.UI.Slider>();
@@ -42,7 +42,7 @@ public class PlayerController : Controller
             MageAttack = new MageAttackAttributes { Darkness = 10, Earth = 0, Fire = 0, Light = 0, Water = 0 },
             Range = 2,
             prefab = (GameObject)Resources.Load("Prefabs/dark_attack")
-        }) ;
+        });
         Abilities.Add(new Ability
         {
             abillityName = "LightBolt",
@@ -50,7 +50,7 @@ public class PlayerController : Controller
             Damage = 50,
             CoolDown = 1.0f,
             CDTimer = 1.0f,
-            MageAttack = new MageAttackAttributes { Darkness = 0, Earth = 0, Fire = 0, Light = 10, Water = 0},
+            MageAttack = new MageAttackAttributes { Darkness = 0, Earth = 0, Fire = 0, Light = 10, Water = 0 },
             Range = 2,
             prefab = (GameObject)Resources.Load("Prefabs/light_attack")
         });

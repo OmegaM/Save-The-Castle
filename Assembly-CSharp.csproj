@@ -81,6 +81,7 @@
     <Compile Include="Assets\Resources\Scripts\Models\Stats.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayersScripts\PlayerController.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayersScripts\PlayerMove.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlayersScripts\PointScript.cs" />
     <Compile Include="Assets\Resources\Scripts\SkillButtonScript.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity/2019.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

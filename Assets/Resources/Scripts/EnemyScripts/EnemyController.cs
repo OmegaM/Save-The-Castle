@@ -48,7 +48,6 @@ public class EnemyController : Controller
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Castle") && _stats.Ability.CanBeUsed)
-            MakeDamage(_stats.Ability,collision.gameObject);
-        
+            MakeDamage(_stats.Ability, collision.gameObject);
     }
 }

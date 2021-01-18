@@ -52,8 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 1
   animator: {fileID: 6489908477042155916}
+  _target: {x: 0, y: 0, z: 0}
+  target: {fileID: 922987975617300251, guid: 3f729a38642a651498358503fab61838, type: 3}
 --- !u!114 &1020979008087951081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7729102ab79dd34280d4a86babf571f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ability: {fileID: 0}
 --- !u!50 &1221863117481856276
 Rigidbody2D:
   serializedVersion: 4
