@@ -50,7 +50,7 @@ public class MainCamera : MonoBehaviour
         var childs = skillList.transform.GetChildCount();
         if (childs > 0)
             CleanSkillChilds();
-        var playerSkills = currentPlayer.GetComponent<PlayerController>().Abilities.Where(s => s.IsActive).ToArray();
+        var playerSkills = currentPlayer.GetComponent<SkillTree>().currentSkills.Where(s => s.IsActive).ToArray();
         
         for (var i = 0; i < playerSkills.Count(); i++)
         {

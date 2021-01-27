@@ -9,6 +9,8 @@ public class PlayerController : Controller
     public float playerAutoAttackCoolDown;
     public GameObject playerAutoAttackPrefab;
     public GameObject healthBarObject;
+    public SkillTree skills;
+    public Enums.CharacterType characterType;
     private void Awake()
     {
         healthBar = healthBarObject.GetComponentInChildren<UnityEngine.UI.Slider>();
@@ -18,43 +20,25 @@ public class PlayerController : Controller
         healthBar.maxValue = _stats.MaxHealth;
         healthBar.value = _stats.Health;
         _stats.MeleeDefense = playerMeleeDefense;
-        
+
+        switch (characterType)
+        {
+            case Enums.CharacterType.Warrior:
+                skills = new WarriorSkillTree();
+                break;
+            case Enums.CharacterType.Mage:
+                skills = new MageSkillTree();
+                break;
+            case Enums.CharacterType.Ranger:
+                skills = new RangerSkillTree();
+                break;
+            default:
+                break;
+        }
+
         animator.SetBool("Death", false);
     }
-    private void Start()
-    {
-        _stats.Ability = new Ability
-        {
-            abillityName = "AutoAttack",
-            AttackType = Enums.AttackTypes.Melee,
-            Damage = playerAutoAttackDamage,
-            CoolDown = playerAutoAttackCoolDown,
-            CDTimer = playerAutoAttackCoolDown,
-            Range = playerAutoAttackRange
-        };
-        Abilities.Add(new Ability
-        {
-            abillityName = "DarkSplash",
-            AttackType = Enums.AttackTypes.Mage,
-            Damage = 50,
-            CoolDown = 1.0f,
-            CDTimer = 1.0f,
-            MageAttack = new MageAttackAttributes { Darkness = 10, Earth = 0, Fire = 0, Light = 0, Water = 0 },
-            Range = 2,
-            prefab = (GameObject)Resources.Load("Prefabs/dark_attack")
-        });
-        Abilities.Add(new Ability
-        {
-            abillityName = "LightBolt",
-            AttackType = Enums.AttackTypes.Mage,
-            Damage = 50,
-            CoolDown = 1.0f,
-            CDTimer = 1.0f,
-            MageAttack = new MageAttackAttributes { Darkness = 0, Earth = 0, Fire = 0, Light = 10, Water = 0 },
-            Range = 2,
-            prefab = (GameObject)Resources.Load("Prefabs/light_attack")
-        });
-    }
+
     private void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)

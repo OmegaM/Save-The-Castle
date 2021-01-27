@@ -3,11 +3,13 @@
 public class Ability : MonoBehaviour
 {
     public string abillityName;
+    public string description;
     public float Range { get; set; }
     public float CoolDown;
     public float CDTimer;
     public float Damage { get; set; }
     public Enums.AttackTypes AttackType { get; set; }
+    public Enums.SkillBranches SkillBranch { get; set; }
     public MageAttackAttributes MageAttack { get; set; } = new MageAttackAttributes();
     public GameObject prefab;
     public bool IsActive = true;
